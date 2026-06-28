@@ -37,42 +37,6 @@ multi-pdf-rag/
     └── qa_chain.py
 ```
 
-## Setup
-
-1. Create and activate a virtual environment.
-
-```bash
-python -m venv venv
-venv\Scripts\activate
-```
-
-2. Install dependencies.
-
-```bash
-pip install -r requirements.txt
-```
-
-3. Create a `.env` file from `.env.example`.
-
-```bash
-copy .env.example .env
-```
-
-4. Add your OpenRouter API key in `.env`.
-
-```env
-OPENROUTER_API_KEY=your_openrouter_api_key_here
-OPENROUTER_MODEL=meta-llama/llama-3.1-8b-instruct
-```
-
-## Run The App
-
-```bash
-streamlit run app.py
-```
-
-Then open the local Streamlit URL shown in the terminal.
-
 ## How It Works
 
 1. The user uploads one or more PDF files.
@@ -82,11 +46,3 @@ Then open the local Streamlit URL shown in the terminal.
 5. FAISS stores the embeddings and finds chunks similar to the user's question.
 6. The selected chunks are sent as context to OpenRouter.
 7. The model generates an answer based only on the uploaded PDFs.
-
-## Notes
-
-- This is a starter project, not a production system.
-- Uploaded PDFs are processed in memory by default.
-- The FAISS index is stored in Streamlit session state while the app is running.
-- The starter project uses offline local embeddings, so it does not need to download models from Hugging Face.
-- You can change the OpenRouter model in `.env`.
