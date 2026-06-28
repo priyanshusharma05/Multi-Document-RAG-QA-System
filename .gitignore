@@ -1,0 +1,9 @@
+venv/
+.env
+__pycache__/
+*.pyc
+.streamlit/
+data/uploaded_pdfs/*
+data/faiss_index/*
+!data/uploaded_pdfs/.gitkeep
+!data/faiss_index/.gitkeep
